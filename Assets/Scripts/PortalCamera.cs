@@ -26,5 +26,8 @@ public class PortalCamera : MonoBehaviour
         //then have to convert this angle back into a quaterion
         Quaternion angletoQuaternion = Quaternion.AngleAxis(portalCamAngle, Vector3.up);
         //then calculate which direction to point torwads (should face the same way as player)
+        Vector3 portalDirection = angletoQuaternion * -playerCamera.forward;
+        //apply to camera
+        transform.rotation = Quaternion.LookRotation(new Vector3(portalDirection.x, -portalDirection.y, portalDirection.z), Vector3.up);
     }
 }
