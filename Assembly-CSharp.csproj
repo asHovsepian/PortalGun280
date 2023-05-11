@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PortalCamera.cs" />
     <Compile Include="Assets\Scripts\PortalTextureSetup.cs" />
+    <Compile Include="Assets\Scripts\PortalTeleporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
