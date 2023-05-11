@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     private PlayerInput playerInput;
     [SerializeField]
     private float moveSpeed;
+    //want to keep track of the camera position so the player moves where the camera is facing
+    private Transform cameraTransform;
     private void Awake()
     {
         playerInput = new PlayerInput();
@@ -22,9 +24,9 @@ public class PlayerController : MonoBehaviour
     }
     private void Start()
     {
-        
+        //cameraTransform = Camera.main.transform;
     }
-    private void FixedUpdate()
+    private void Update()
     {
         transform.position += playerInput.Player.Movement.ReadValue<Vector3>() * moveSpeed * Time.deltaTime;
     }
